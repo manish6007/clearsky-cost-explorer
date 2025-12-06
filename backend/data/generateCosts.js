@@ -2,24 +2,24 @@
 const fs = require('fs');
 const path = require('path');
 
-const domains = ['clearwater-trade', 'clearwater-settlement', 'clearwater-sales', 'clearwater-collateral'];
+const domains = ['clearsky-trade', 'clearsky-settlement', 'clearsky-sales', 'clearsky-collateral'];
 const services = ['ec2', 'rds', 's3', 'lambda', 'eks', 'cloudwatch'];
 const environments = ['dev', 'uat', 'prod'];
 
 // Base daily costs per domain (USD) - Trade & Settlement are highest
 const domainBaseCosts = {
-    'clearwater-trade': 2500,
-    'clearwater-settlement': 2200,
-    'clearwater-sales': 1200,
-    'clearwater-collateral': 900,
+    'clearsky-trade': 2500,
+    'clearsky-settlement': 2200,
+    'clearsky-sales': 1200,
+    'clearsky-collateral': 900,
 };
 
 // Service distribution weights per domain
 const domainServiceWeights = {
-    'clearwater-trade': { ec2: 0.35, rds: 0.25, eks: 0.20, lambda: 0.10, s3: 0.05, cloudwatch: 0.05 },
-    'clearwater-settlement': { ec2: 0.30, rds: 0.30, eks: 0.15, lambda: 0.12, s3: 0.08, cloudwatch: 0.05 },
-    'clearwater-sales': { ec2: 0.25, lambda: 0.30, rds: 0.15, eks: 0.10, s3: 0.12, cloudwatch: 0.08 },
-    'clearwater-collateral': { s3: 0.30, rds: 0.35, ec2: 0.15, lambda: 0.08, eks: 0.07, cloudwatch: 0.05 },
+    'clearsky-trade': { ec2: 0.35, rds: 0.25, eks: 0.20, lambda: 0.10, s3: 0.05, cloudwatch: 0.05 },
+    'clearsky-settlement': { ec2: 0.30, rds: 0.30, eks: 0.15, lambda: 0.12, s3: 0.08, cloudwatch: 0.05 },
+    'clearsky-sales': { ec2: 0.25, lambda: 0.30, rds: 0.15, eks: 0.10, s3: 0.12, cloudwatch: 0.08 },
+    'clearsky-collateral': { s3: 0.30, rds: 0.35, ec2: 0.15, lambda: 0.08, eks: 0.07, cloudwatch: 0.05 },
 };
 
 // Environment cost multipliers (prod >> uat >> dev)
@@ -27,10 +27,10 @@ const environmentMultipliers = { prod: 0.70, uat: 0.20, dev: 0.10 };
 
 // Growth rates per domain (monthly percentage increase)
 const domainGrowthRates = {
-    'clearwater-trade': 0.03,
-    'clearwater-settlement': 0.025,
-    'clearwater-sales': 0.015,
-    'clearwater-collateral': 0.01,
+    'clearsky-trade': 0.03,
+    'clearsky-settlement': 0.025,
+    'clearsky-sales': 0.015,
+    'clearsky-collateral': 0.01,
 };
 
 function generateDateRange(months) {

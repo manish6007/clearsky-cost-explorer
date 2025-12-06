@@ -1,5 +1,5 @@
 id,name,owner,costCenter,environments
-clearwater-trade,ClearSky Trade,MD – Markets Technology,CC-MKT-001,"dev,uat,prod"
-clearwater-settlement,ClearSky Settlement,MD – Operations Technology,CC-OPS-002,"dev,uat,prod"
-clearwater-sales,ClearSky Sales,MD – Sales & Distribution,CC-SLS-003,"dev,uat,prod"
-clearwater-collateral,ClearSky Collateral,MD – Risk & Collateral,CC-RSK-004,"dev,uat,prod"
+clearsky-trade,ClearSky Trade,MD – Markets Technology,CC-MKT-001,"dev,uat,prod"
+clearsky-settlement,ClearSky Settlement,MD – Operations Technology,CC-OPS-002,"dev,uat,prod"
+clearsky-sales,ClearSky Sales,MD – Sales & Distribution,CC-SLS-003,"dev,uat,prod"
+clearsky-collateral,ClearSky Collateral,MD – Risk & Collateral,CC-RSK-004,"dev,uat,prod"
