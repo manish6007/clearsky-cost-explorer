@@ -1,0 +1,7 @@
+id,name,category
+ec2,EC2,Compute
+rds,RDS,Database
+s3,S3,Storage
+lambda,Lambda,Compute
+eks,EKS,Containers
+cloudwatch,CloudWatch,Monitoring
